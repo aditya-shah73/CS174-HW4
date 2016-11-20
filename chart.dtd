@@ -2,4 +2,3 @@
 <!-- chart.dtd  -->
 
 <!ELEMENT chart (titleofChart, hash, datas) >
-
