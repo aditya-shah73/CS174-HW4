@@ -15,13 +15,11 @@ class XMLView extends View
         ?>
      
      
-<!DOCTYPE chart SYSTEM "/Applications/XAMPP/xamppfiles/htdocs/Hw4/chart.dtd" >
+<!DOCTYPE chart SYSTEM "/Applications/XAMPP/xamppfiles/htdocs/Hw4/CS174-Hw4/chart.dtd" >
 <chart>
     <titleofChart>shakti</titleofChart>
     <hash>hashvalue</hash>
     <datas>datavalue</datas>
-   
-
 
 </chart>
         <?php
@@ -29,9 +27,3 @@ class XMLView extends View
     
 }
 }
-
-
-
-
-
-    

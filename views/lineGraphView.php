@@ -13,7 +13,7 @@ class lineGraphView extends View
 }
     public function renderLineGraphView(){
         $basePath = $_SERVER['DOCUMENT_ROOT'];
-        $config = require("$basePath/Hw4/configs/config.php");
+        $config = require("$basePath/Hw4/CS174-Hw4/configs/config.php");
         $conn = mysqli_connect($config['host'], $config['username'], $config['password']);
 
      mysqli_select_db($conn,"Hw4DB");
@@ -28,7 +28,7 @@ class lineGraphView extends View
         <!DOCTYPE html>
         <html lang="en">
         <head>
-             <script type="text/javascript" src="http://localhost/Hw4/scripts/chart.js" > </script>
+             <script type="text/javascript" src="http://localhost/Hw4/CS174-Hw4/scripts/chart.js" > </script>
             <title>LineGraph - PasteChart</title>
         </head>
         <body>

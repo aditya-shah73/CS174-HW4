@@ -5,7 +5,7 @@ return array(
     'username' => 'root',
     'password' => '',
     'database' => 'Hw4DB'
-    "BASE_URL" => 'http://localhost/Hw4/views/View.php/'
+    "BASE_URL" => 'http://localhost/Hw4/CS174-Hw4/views/View.php/'
 );
 
 ?>

@@ -26,6 +26,4 @@ class lineGraphController extends Controller
 
 
     }
-
-
 }

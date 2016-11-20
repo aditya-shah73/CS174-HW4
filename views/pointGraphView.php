@@ -16,7 +16,7 @@ class pointGraphView extends View
         <!DOCTYPE html>
         <html lang="en">
         <head>
-            <script type="text/javascript" src="http://localhost/Hw4/scripts/chart.js" > </script>
+            <script type="text/javascript" src="http://localhost/Hw4/CS174-Hw4/scripts/chart.js" > </script>
             <title>PointGraph - PasteChart</title>
         </head>
         <body>
@@ -37,4 +37,3 @@ class pointGraphView extends View
     
 }
 }
-
