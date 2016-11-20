@@ -1,0 +1,10 @@
+
+     
+     
+<!DOCTYPE chart SYSTEM "/Applications/XAMPP/xamppfiles/htdocs/Hw4/CS174HW4/chart.dtd" >
+<chart>
+    <titleofChart>shakti</titleofChart>
+    <hash>hashvalue</hash>
+    <datas>datavalue</datas>
+
+</chart>

@@ -4,27 +4,27 @@ namespace Hw4\CS174HW4\views;
 //use cmpe174\hw3\views\elements as E;
 
 
-class pointGraphView extends View
+class jsonPView extends View
 {
 	public function render($data)
     {
-        renderPointGraphView();
+        renderjsonPView();
 }
-    public function renderPointGraphView(){
+    public function renderjsonPView(){
         ?>
         <!DOCTYPE html>
         <html lang="en">
         <head>
             <script type="text/javascript" src="http://localhost/Hw4/CS174HW4/scripts/chart.js" > </script>
-            <title>PointGraph - PasteChart</title>
+            <title>JsonPChart - PasteChart</title>
         </head>
         <body>
-           <h1>PointGraph - PasteChart</h1>
+           <h1>JsonPChart- PasteChart</h1>
             <div id="forChart"></div>
            <script type="text/javascript">
          
                graph = new Chart("forChart",  {"Jan":10, "Feb":20, "Dec":5},
-                {"title":"Point Chart - Month v Value", "type":"PointGraph"})
+                {"title":"Paoit Chart - Month v Value", "type":"JsonPGraph"})
 
                console.log("shakti")
               graph.draw();
@@ -36,3 +36,4 @@ class pointGraphView extends View
     
 }
 }
+

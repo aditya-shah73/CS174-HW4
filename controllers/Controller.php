@@ -1,5 +1,5 @@
 <?php
-namespace Hw4\controllers;
+namespace Hw4\CS174HW4\controllers;
 
 
 abstract class Controller

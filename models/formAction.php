@@ -1,10 +1,10 @@
 <?php
-namespace Hw4\models;
-use Hw4\controllers as C;
+namespace Hw4\CS174HW4\models;
+use Hw4\CS174HW4\controllers as C;
 $basePath = $_SERVER['DOCUMENT_ROOT'];
 
-$config2 = require("$basePath/Hw4/CS174-Hw4/configs/CreateDB.php");
-$config = require("$basePath/Hw4/CS174-Hw4/configs/config.php");
+$config2 = require("$basePath/Hw4/CS174HW4/configs/CreateDB.php");
+$config = require("$basePath/Hw4/CS174HW4/configs/config.php");
 $title = $_REQUEST['title'];
 echo "<br>";
 
