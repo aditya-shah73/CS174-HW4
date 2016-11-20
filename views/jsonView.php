@@ -8,26 +8,31 @@ class jsonView extends View
 {
 	public function render($data)
     {
-        renderjsonView();
+        renderjsonView($data);
 }
-    public function renderjsonView(){
+    public function renderjsonView($row){
+        echo $row[0];
         ?>
         <!DOCTYPE html>
         <html lang="en">
         <head>
-            <script type="text/javascript" src="http://localhost/Hw4/CS174HW4/scripts/chart.js" > </script>
+           
             <title>JsonChart - PasteChart</title>
         </head>
         <body>
            <h1>JsonChart- PasteChart</h1>
             <div id="forChart"></div>
            <script type="text/javascript">
-         
-               graph = new Chart("forChart",  {"Jan":10, "Feb":20, "Dec":5},
-                {"title":"Paoit Chart - Month v Value", "type":"JsonGraph"})
+          function p()
+          {
+            document.write("JSON VIEW");
 
-               console.log("shakti")
-              graph.draw();
+          }
+          p();
+
+
+
+
            </script>
         </body>
         </html>

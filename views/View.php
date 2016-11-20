@@ -2,13 +2,27 @@
 namespace Hw4\CS174HW4\views;
 use Hw4\CS174HW4\views as V;
 
+$basePath = $_SERVER['DOCUMENT_ROOT'];
 
 
 class View
 {
      public function render($data)
     {
-        
+
+        //require_once('/Hw4/CS174Hw4/models/GetDataModel.php');
+        //$getDataModel = new GetDataModel();
+        //$modelData = $getDataModel->GetData();
+        $basePath = $_SERVER['DOCUMENT_ROOT'];
+        $config = require("$basePath/Hw4/CS174HW4/configs/config.php");
+$conn = mysqli_connect($config['host'], $config['username'], $config['password']);
+
+ mysqli_select_db($conn,"Hw4DB");
+ $result = mysqli_query($conn, "select DATA from CHARTDATA");
+     
+ $row = mysqli_fetch_array($result);
+
+
 
     	if($data == "LineGraphURL")
     	{
@@ -35,16 +49,20 @@ class View
 
     	if($data == "XMLURL")
     	{
-    		require_once('./../views/XMLView.php');
-    	$line = new V\XMLView();
-	$line->renderXMLView();
+    		//require_once('./../views/XMLView.php');
+            $xml = simplexml_load_file("./../views/XMLView.xml");
+            require_once('./../views/XMLPHPView.php');
+        $line = new V\XMLPHPView();
+    $line->renderXMLPHPView($xml);
+            
+    	   
 
     	}
         if($data == "jsonURL")
         {
             require_once('./../views/jsonView.php');
         $line = new V\jsonView();
-    $line->renderjsonView();
+    $line->renderjsonView($row);
 
         }
         if($data == "jsonpURL")
