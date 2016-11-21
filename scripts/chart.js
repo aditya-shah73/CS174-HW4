@@ -1,34 +1,16 @@
-//chart.js
-/**
- * Defines a class useful for making point and line graph charts.
- *
- * Example use:
- * graph = new Chart(some_html_element_id, 
- *     {"Jan":7, "Feb":20, "Dec":5}, {"title":"Test Chart - Month v Value"});
- * graph.draw();
- *
- * @param String chart_id id of tag that the chart will be drawn into
- * @param Object data a sequence {x_1:y_1, ... x_1,y_n} points to plot
- *    x_i's can be arbitrary labels, y_i's are assumes to be floats
- * @param Object (optional) properties override values for any of the
- *      properties listed in the property_defaults variable below
- */
 function Chart(chart_id, data)
 {
-
-    
-    
     var self = this;
     var p = Chart.prototype;
-    var properties = (typeof arguments[2] !== 'undefined') ?
-        arguments[2] : {};
+    var properties = (typeof arguments[2] !== 'undefined') ? arguments[2] : {};
     var container = document.getElementById(chart_id);
-    //document.writeIn("<p>shakti singh rathore</p>");
-    if (!container) {
-
+    if (!container) 
+    {
         return false;
     }
-    var property_defaults = {
+
+    var property_defaults = 
+    {
         'axes_color' : 'rgb(128,128,128)', // color of the x and y axes lines
         'caption' : '', // caption text appears at bottom
         'caption_style' : 'font-size: 14pt; text-align: center;',
@@ -49,10 +31,15 @@ function Chart(chart_id, data)
             //PointGraph
         'width' : 500 //width of area to draw into in pixels
     };
-    for (var property_key in property_defaults) {
-        if (typeof properties[property_key] !== 'undefined') {
+
+    for (var property_key in property_defaults) 
+    {
+        if (typeof properties[property_key] !== 'undefined') 
+        {
             this[property_key] = properties[property_key];
-        } else {
+        } 
+        else 
+        {
             this[property_key] = property_defaults[property_key];
         }
     }
@@ -63,23 +50,24 @@ function Chart(chart_id, data)
     container.innerHTML = '<figure>'+ title_tag + '<canvas id="' + chart_id +
         '-content" ></canvas>' + caption_tag + '</figure>';
     canvas = document.getElementById(chart_id + '-content');
-    if (!canvas || typeof canvas.getContext === 'undefined') {
+
+    if (!canvas || typeof canvas.getContext === 'undefined') 
+    {
         return
     }
     var context = canvas.getContext("2d");
     canvas.width = this.width;
     canvas.height = this.height;
     this.data = data;
+
     /**
      * Main function used to draw the graph type selected
      */
     p.draw = function()
     {
-       // document.writeIn("<p>shakti singh rathore</p>");
-       // document.writeIn("shakti is the best");
         self['draw' + self.type]();
-        
     }
+
     /**
      * Used to store in fields the min and max y values as well as the start
      * and end x keys, and the range = max_y - min_y
@@ -107,6 +95,7 @@ function Chart(chart_id, data)
         self.end = key;
         self.range = self.max_value - self.min_value;
     }
+
     /**
      * Used to draw a point at location x,y in the canvas
      */
@@ -117,6 +106,7 @@ function Chart(chart_id, data)
         c.arc(x, y, self.point_radius, 0, 2 * Math.PI, true);
         c.fill();
     }
+
     /**
      * Draws the x and y axes for the chart as well as ticks marks and values
      */
@@ -170,6 +160,7 @@ function Chart(chart_id, data)
             x += dx;
         }
     }
+
     /**
      * Draws a chart consisting of just x-y plots of points in data.
      */
@@ -177,8 +168,7 @@ function Chart(chart_id, data)
     {
         self.initMinMaxRange();
         self.renderAxes();
-        var dx = (self.width - 2*self.x_padding) /
-            (Object.keys(data).length - 1);
+        var dx = (self.width - 2*self.x_padding) / (Object.keys(data).length - 1);
         var c = context;
         c.lineWidth = self.line_width;
         c.strokeStyle = self.data_color;
@@ -192,6 +182,7 @@ function Chart(chart_id, data)
             x += dx;
         }
     }
+
     /**
      * Draws a chart consisting of x-y plots of points in data, each adjacent
      * point pairs connected by a line segment
