@@ -51,7 +51,6 @@ $str =  format();
 					}
 					else
 					{
-						alert('correct');
 						return true
 					}
 				}
